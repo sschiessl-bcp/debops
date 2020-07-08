@@ -3,6 +3,12 @@
 # Copyright (C) 2017 DebOps <https://debops.org/>
 # SPDX-License-Identifier: GPL-3.0-only
 
+# https://github.com/elastic/elasticsearch/issues/29484
+- name: Add ElasticSearch GPG Key
+  apt_key:
+    url: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+    state: present
+
 - name: Configure Elastic APT repository
   apt_repository:
     update_cache: True
